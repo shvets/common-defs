@@ -1,2 +1,3 @@
 # common-defs
-Common definitions for Swift projects
+
+A description of this package.
