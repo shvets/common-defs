@@ -2,11 +2,11 @@ import Foundation
 
 open class Item: Codable, Nameable {
   public var name: String
-  public var id: String?
+  public var id: String
 
   public init(name: String, id: String? = nil) {
     self.name = name
-    self.id = id
+    self.id = id ?? name
   }
 
   private enum CodingKeys: String, CodingKey {
@@ -20,7 +20,7 @@ open class Item: Codable, Nameable {
     let name = try container.decode(String.self, forKey: .name)
     let id = try container.decodeIfPresent(String.self, forKey: .id)
 
-    self.init(name: name, id: id ?? "")
+    self.init(name: name, id: id)
   }
 
   open func encode(to encoder: Encoder) throws {
@@ -31,7 +31,7 @@ open class Item: Codable, Nameable {
   }
 
   public static func ==(lhs: Item, rhs: Item) -> Bool {
-    lhs.name == rhs.name
+    lhs.id == rhs.id
   }
 
   open func hash(into hasher: inout Hasher) {
