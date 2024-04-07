@@ -5,7 +5,7 @@ open class Item: Codable, Nameable {
   public var id: String
   public var type: String?
 
-  public init(name: String, id: String? = nil, type: String? = null) {
+  public init(name: String, id: String? = nil, type: String? = nil) {
     self.name = name
     self.id = id ?? name
     self.type = type
