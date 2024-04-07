@@ -3,17 +3,15 @@ open class MediaItem: Item {
   public var description: String?
   public var localImage: Bool
   public var systemImage: Bool
-  public var type: String?
 
   public init(name: String, id: String?=nil, type: String? = nil, imageName: String?=nil,
               description: String? = nil, localImage: Bool = false, systemImage: Bool = false) {
-    self.type = type
     self.imageName = imageName
     self.description = description
     self.localImage = localImage
     self.systemImage = systemImage
 
-    super.init(name: name, id: id)
+    super.init(name: name, id: id, type: type)
   }
 
   private enum CodingKeys: String, CodingKey {
