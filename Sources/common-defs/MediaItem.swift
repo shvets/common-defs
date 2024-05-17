@@ -27,7 +27,7 @@ open class MediaItem: Item {
 
     let name = try container.decode(String.self, forKey: .name)
     let id = try container.decodeIfPresent(String.self, forKey: .id)
-    let type = try container.decode(String.self, forKey: .type)
+    let type = try container.decodeIfPresent(String.self, forKey: .type)
     let imageName = try container.decodeIfPresent(String.self, forKey: .imageName)
     let description = try container.decodeIfPresent(String.self, forKey: .description)
 
