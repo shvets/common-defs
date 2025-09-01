@@ -1,8 +1,8 @@
-open class MediaItem: Item {
-  public var imageName: String?
-  public var description: String?
-  public var localImage: Bool
-  public var systemImage: Bool
+open class MediaItem: Item, @unchecked Sendable {
+  public let imageName: String?
+  public let description: String?
+  public let localImage: Bool
+  public let systemImage: Bool
 
   public init(name: String, id: String?=nil, type: String? = nil, imageName: String?=nil,
               description: String? = nil, localImage: Bool = false, systemImage: Bool = false) {

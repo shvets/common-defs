@@ -1,10 +1,10 @@
 import Foundation
 
-public struct Bitrate: Codable {
-  public var name: String
-  public var id: String?
-  public var format: String?
-  public var url: String?
+public struct Bitrate: Codable, Sendable {
+  public let name: String
+  public let id: String?
+  public let format: String?
+  public let url: String?
 
   public init(name: String, id: String? = nil, format: String? = nil, url: String? = nil) {
     self.name = name

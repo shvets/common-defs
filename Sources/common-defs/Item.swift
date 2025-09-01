@@ -1,9 +1,9 @@
 import Foundation
 
-open class Item: Codable, Nameable {
-  public var name: String
-  public var id: String
-  public var type: String?
+open class Item: Codable, Hashable, Identifiable, @unchecked Sendable {
+  public let name: String
+  public let id: String
+  public let type: String?
 
   public init(name: String, id: String? = nil, type: String? = nil) {
     self.name = name
